@@ -3,7 +3,9 @@ let slides = document.querySelectorAll('.test-slide'),
     next = document.querySelector('.next'),
     dotsWrap = document.querySelector('.dots'),
     dots = document.querySelectorAll('.dot'),
-    slideIndex = 1;
+    slideIndex = 1,
+    checkBtn = document.querySelector('.check-btn'),
+    checkBlock = document.querySelector('.btn-view')
 // console.log(prev)
     showSlides(slideIndex);
     function showSlides(n) {
@@ -41,4 +43,8 @@ let slides = document.querySelectorAll('.test-slide'),
           currentSlide(i);
         }
       }
+    });
+
+    checkBtn.addEventListener('click', function() {
+      checkBlock.classList.add('check-view');
     });
