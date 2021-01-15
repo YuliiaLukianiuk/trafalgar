@@ -5,7 +5,11 @@ let slides = document.querySelectorAll('.test-slide'),
     dots = document.querySelectorAll('.dot'),
     slideIndex = 1,
     checkBtn = document.querySelector('.check-btn'),
-    checkBlock = document.querySelector('.btn-view')
+    checkBlock = document.querySelectorAll('.btn-view'),
+    humburger = document.querySelector('.humburger'),
+    navigation = document.querySelector('.navigation')
+
+    
 // console.log(prev)
     showSlides(slideIndex);
     function showSlides(n) {
@@ -18,7 +22,7 @@ let slides = document.querySelectorAll('.test-slide'),
       slides.forEach((item) => item.style.display = 'none');
       dots.forEach((item) => item.classList.remove('dot-active'));
 
-      slides[slideIndex - 1].style.display = 'block';
+      slides[slideIndex - 1].style.display = 'flex';
       dots[slideIndex - 1].classList.add('dot-active');
     }
 
@@ -46,5 +50,9 @@ let slides = document.querySelectorAll('.test-slide'),
     });
 
     checkBtn.addEventListener('click', function() {
-      checkBlock.classList.add('check-view');
+      checkBlock.forEach((item)=>item.classList.add('check-view'));
     });
+
+    humburger.addEventListener('click', function(){
+      navigation.classList.add('active');
+    })
