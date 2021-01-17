@@ -7,7 +7,9 @@ let slides = document.querySelectorAll('.test-slide'),
     checkBtn = document.querySelector('.check-btn'),
     checkBlock = document.querySelectorAll('.btn-view'),
     humburger = document.querySelector('.humburger'),
-    navigation = document.querySelector('.navigation')
+    navigation = document.querySelector('.navigation'),
+    overlayHumburger = document.querySelector('.grey-container'),
+    closeHumberger = document.querySelector('.close')
 
     
 // console.log(prev)
@@ -54,5 +56,14 @@ let slides = document.querySelectorAll('.test-slide'),
     });
 
     humburger.addEventListener('click', function(){
+      closeHumberger.classList.add('show');
+
       navigation.classList.add('active');
-    })
+      overlayHumburger.classList.add('overlay');
+    });
+    closeHumberger.addEventListener('click', function(){
+      navigation.classList.remove('active');
+      overlayHumburger.classList.remove('overlay');
+      closeHumberger.classList.remove('show');
+
+    });

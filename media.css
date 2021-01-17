@@ -1,50 +1,48 @@
 @media (max-width: 768px) {
-  .container {
-    width: 95%;
-  }
-  .header-wrap,
-  .section, .section-2 {
-    flex-wrap: wrap;
-    /* justify-content: center; */
-    justify-content: space-between;
-    position: relative;
-  }
-  .block-left, .block-right {
-    flex: 0 0 100%;
-  }
-  .btn-header,
-  .btn-main,
-  .section-btn,
-  .check-btn {
-    width: 100%;
-  }
-  .card-item {
-    flex: 0 0 100%;
-  }
-  .test-wrap {
-    width: 100%;
-  }
-  .wrap-body{
-    width: 100%;
-  }
-
-  .section-image,
-  .wrap,
-  .wrap-2,
-  .section-image-2 {
-    flex: 0 0 100%;
-    margin-top: 35px;
-  }
-  .slider-row {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .slider-wrap {
-    min-height: 525px;
-  }
-  .slider-block-left, .slider-block-right {
-    flex: 0 0 100%;
-    margin-top: 15px;
+.container {
+  width: 95%;
+}
+.header-wrap,
+.section, .section-2 {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+}
+.block-left, .block-right {
+  flex: 0 0 100%;
+}
+.btn-header,
+.btn-main,
+.section-btn,
+.check-btn {
+  width: 100%;
+}
+.card-item {
+  flex: 0 0 100%;
+}
+.test-wrap {
+  width: 100%;
+}
+.wrap-body{
+  width: 100%;
+}
+.section-image,
+.wrap,
+.wrap-2,
+.section-image-2 {
+  flex: 0 0 100%;
+  margin-top: 35px;
+}
+.slider-row {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.slider-wrap {
+  min-height: 525px;
+}
+.slider-block-left, .slider-block-right {
+  flex: 0 0 100%;
+  margin-top: 15px;
 }
 .slider-h1 {
   margin-top: 0;
@@ -70,19 +68,37 @@
   width: 180px;
   margin: 0 auto;
 }
-.humburger {
+.humburger,
+.close {
   width: 50px;
   height: 50px;
   top: 10px;
   position: absolute;
   right: 0;
 }
-.humburger span {
+.close {
+  opacity: 0;
+}
+.show{
+  opacity: 1;
+}
+.humburger span,
+.close span {
   height: 2px;
   width: 20px;
   background: red;
   position: absolute;
   right: 0;
+  z-index: 30;
+}
+.close span {
+  z-index: 100;
+}
+.close span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.close span:nth-child(2) {
+  transform: rotate(-45deg);
 }
 .humburger span:nth-child(1) {
   top: 0;
@@ -94,7 +110,6 @@
   top: 10px;
 }
 .navigation {
-  /* display: none; */
   transform: translateX(100%);
   visibility: hidden;
   position: fixed;
@@ -107,15 +122,18 @@
 }
 .nav {
   flex-direction: column;
-  
+  text-align: center;  
 }
 .navBar {
   height: 100vh;
-  background-color: red;
+  background-color: var(--white);
+  padding: 25px;
+}
+.nav-item {
+  margin: 25px;
 }
 .active {
   transform: translateX(0%);
   visibility: visible;
-
 }
 }
