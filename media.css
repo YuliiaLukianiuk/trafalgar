@@ -1,7 +1,4 @@
 @media (max-width: 768px) {
-.container {
-  width: 95%;
-}
 .header-wrap,
 .section, .section-2 {
   flex-wrap: wrap;
@@ -49,6 +46,7 @@
 }
 .container-item {
   flex: 0 0 100%;
+  margin: 30px;
 }
 .item-body {
   height: 105%;
@@ -136,4 +134,15 @@
   transform: translateX(0%);
   visibility: visible;
 }
+.slider-conteiner-1 {
+  min-height: 500px;
+ }
 }
+@media (max-width: 905px) and (min-width: 769px) {
+
+.container-item {
+  flex: 0 0 30%;
+  margin: 10px;
+}
+
+}  

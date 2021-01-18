@@ -1,42 +1,43 @@
-let slides = document.querySelectorAll('.test-slide'),
-    prev = document.querySelector('.prev'),
-    next = document.querySelector('.next'),
-    dotsWrap = document.querySelector('.dots'),
-    dots = document.querySelectorAll('.dot'),
-    slideIndex = 1,
-    checkBtn = document.querySelector('.check-btn'),
-    checkBlock = document.querySelectorAll('.btn-view'),
-    humburger = document.querySelector('.humburger'),
-    navigation = document.querySelector('.navigation'),
-    overlayHumburger = document.querySelector('.grey-container'),
-    closeHumberger = document.querySelector('.close')
+let slides = document.querySelectorAll('.test-slide');
+let prev = document.querySelector('.prev');
+let next = document.querySelector('.next');
+let dotsWrap = document.querySelector('.dots');
+let dots = document.querySelectorAll('.dot');
+let slideIndex = 1;
+let checkBtn = document.querySelector('.check-btn');
+let checkBlock = document.querySelectorAll('.btn-view');
+let humburger = document.querySelector('.humburger');
+let navigation = document.querySelector('.navigation');
+let overlayHumburger = document.querySelector('.grey-container');
+let closeHumberger = document.querySelector('.close');
+let carusel = document.querySelector('.test-carusel');
 
-    
-// console.log(prev)
-    showSlides(slideIndex);
-    function showSlides(n) {
+//////slider/////
+
+    showSlides(slideIndex, 0);
+    function showSlides(n, position) {
       if (n > slides.length){
         slideIndex = 1;
+        position = 0;
       }
       if (n < 1) {
         slideIndex = slides.length;
+        position=(-(slideIndex-1)*100);
       }
-      slides.forEach((item) => item.style.display = 'none');
+      carusel.style.transform = `translateX(${(-(n-1)) * position}%)`
       dots.forEach((item) => item.classList.remove('dot-active'));
 
-      slides[slideIndex - 1].style.display = 'flex';
       dots[slideIndex - 1].classList.add('dot-active');
     }
 
     function plusSlides(n) {
-      showSlides(slideIndex += n);
+      showSlides(slideIndex += n,100);
     }
     function currentSlide(n) {
-      showSlides(slideIndex = n);
+      showSlides(slideIndex = n,100);
     }
 
     prev.addEventListener('click', function() {
-      console.log('START')
       plusSlides(-1);
     });
 
@@ -50,11 +51,11 @@ let slides = document.querySelectorAll('.test-slide'),
         }
       }
     });
-
+////btn-view////
     checkBtn.addEventListener('click', function() {
       checkBlock.forEach((item)=>item.classList.add('check-view'));
     });
-
+////humburger//////
     humburger.addEventListener('click', function(){
       closeHumberger.classList.add('show');
 

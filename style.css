@@ -276,10 +276,16 @@ body {
   justify-content: center;
   align-items: center;
   width: 88%;
+  min-height: 425px; 
 }
 .slider-wrap{
+  width: 90%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.test-carusel {
   display: flex;
-  justify-content: center;
+  transition: all 1000ms ease 0s;
 }
 .slider-row {
   display: flex;
@@ -328,6 +334,9 @@ body {
 .slider-block-right {
   flex: 0 0 50%;
 }
+.test-slide {
+  flex: 0 0 100%;
+}
 .block-info h2,
 .block-info p {
   font-size: 22px;
@@ -348,9 +357,6 @@ body {
   display: flex;
   margin-top: 15px;
   justify-content: center;
-}
-.slider-wrap {
-  min-height: 425px;
 }
 .slider-body {
   width: 80%;
@@ -404,11 +410,11 @@ body {
 .check-wrap {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 80px;
+  margin-top: 100px;
 }
 .container-item {
-  flex: 0 0 33.333%;
-  padding: 15px;
+  flex: 0 0 30%;
+  margin: 15px;
 }
 .item-body {
   background: var(--white);
